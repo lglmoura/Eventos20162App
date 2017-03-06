@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    
+
     public void chamaTelaEventos(View v){
         Toast.makeText(this,"",Toast.LENGTH_SHORT);
     }
