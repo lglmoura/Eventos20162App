@@ -26,7 +26,7 @@ public class EventoActivity extends Activity {
         String nomep     = (String) intent.getSerializableExtra("nome");
         String localp    = (String) intent.getSerializableExtra("local");
         String enderecop = (String) intent.getSerializableExtra("endereco");
-        String datap     = (String) intent.getSerializableExtra("endereco");
+        String datap     = (String) intent.getSerializableExtra("data");
         int capacidadep  = (int)  intent.getSerializableExtra("capacidade");
 
         EditText nome = (EditText) findViewById(R.id.etNomeEvento);
