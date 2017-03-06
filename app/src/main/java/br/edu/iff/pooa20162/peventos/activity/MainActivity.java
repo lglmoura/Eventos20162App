@@ -1,9 +1,10 @@
 package br.edu.iff.pooa20162.peventos.activity;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import br.edu.iff.pooa20162.peventos.R;
 
@@ -16,6 +17,10 @@ public class MainActivity extends Activity {
     }
 
     public void chamaTelaEventos(View v){
-        Toast.makeText(this,"",Toast.LENGTH_SHORT);
+        Intent intent = new Intent(MainActivity.this, ListasEventosActivity.class);
+        startActivity(intent);
+    }
+    private Context getContext(){
+        return this;
     }
 }
