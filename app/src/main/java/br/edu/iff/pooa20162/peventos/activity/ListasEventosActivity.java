@@ -1,4 +1,4 @@
-package br.edu.iff.pooa20162.peventos;
+package br.edu.iff.pooa20162.peventos.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import br.edu.iff.pooa20162.peventos.R;
 
 public class ListasEventosActivity extends AppCompatActivity {
 
