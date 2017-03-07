@@ -42,7 +42,7 @@ public class EventoActivity extends Activity {
         local.setText(localp);
 
         EditText capacidade = (EditText) findViewById(R.id.etCapacidadeEvento);
-        capacidade.setText(capacidadep);
+        capacidade.setText(Integer.toString(capacidadep));
 
 
         btsalvar = (Button) findViewById(R.id.btSalvarEvento);
@@ -88,7 +88,7 @@ public class EventoActivity extends Activity {
 
         Evento evento = new Evento(nome.getText().toString(),local.getText().toString(),
                 endereco.getText().toString(),data.getText().toString(),
-                Integer.getInteger(capacidade.getText().toString()).intValue());
+                Integer.parseInt(capacidade.getText().toString()));
 
         evento.save();
 
@@ -110,7 +110,7 @@ public class EventoActivity extends Activity {
         evento.setLocal(local.getText().toString());
         evento.setEndereco(endereco.getText().toString());
         evento.setData(data.getText().toString());
-        evento.setCapacidade(Integer.getInteger(capacidade.getText().toString()).intValue());
+        evento.setCapacidade(Integer.parseInt(capacidade.getText().toString()));
 
         evento.save();
 

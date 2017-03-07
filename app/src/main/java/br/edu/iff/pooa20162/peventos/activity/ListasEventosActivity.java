@@ -37,7 +37,7 @@ public class ListasEventosActivity extends AppCompatActivity {
                 intent.putExtra("local","");
                 intent.putExtra("endereco","");
                 intent.putExtra("data","");
-                intent.putExtra("capacidade","");
+                intent.putExtra("capacidade",0);
 
                 startActivity(intent);
             }
