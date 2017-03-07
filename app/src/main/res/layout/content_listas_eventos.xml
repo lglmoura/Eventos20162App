@@ -13,8 +13,10 @@
     tools:context="br.edu.iff.pooa20162.peventos.activity.ListasEventosActivity"
     tools:showIn="@layout/activity_listas_eventos">
 
-    <TextView
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:id="@+id/lvEventos"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
