@@ -27,4 +27,14 @@
         android:id="@+id/button"
         android:onClick="chamaTelaEventos" />
 
+    <Button
+        android:text="Local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btLocal"
+        android:onClick="chamaTelaLocal"
+        android:layout_alignBaseline="@+id/button"
+        android:layout_alignBottom="@+id/button"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

@@ -20,6 +20,11 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(MainActivity.this, ListasEventosActivity.class);
         startActivity(intent);
     }
+
+    public void chamaTelaLocal(View v){
+        Intent intent = new Intent(MainActivity.this, ListaLocalActivity.class);
+        startActivity(intent);
+    }
     private Context getContext(){
         return this;
     }

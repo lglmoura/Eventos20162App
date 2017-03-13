@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_listas_Locais" />
+    <include layout="@layout/content_listas_locais" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
