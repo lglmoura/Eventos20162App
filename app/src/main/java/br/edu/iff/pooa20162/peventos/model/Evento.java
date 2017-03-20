@@ -9,16 +9,16 @@ import com.orm.SugarRecord;
 public class Evento extends SugarRecord {
 
     private String nome;
-    private String local;
-    private String endereco;
+    private Local local;
+
     private String data;
     private int capacidade;
 
 
-    public Evento(String nome, String local, String endereco, String data, int capacidade) {
+    public Evento(String nome, Local local,  String data, int capacidade) {
         this.nome = nome;
         this.local = local;
-        this.endereco = endereco;
+
         this.data = data;
         this.capacidade = capacidade;
     }
@@ -35,21 +35,15 @@ public class Evento extends SugarRecord {
         this.nome = nome;
     }
 
-    public String getLocal() {
+    public Local getLocal() {
         return local;
     }
 
-    public void setLocal(String local) {
+    public void setLocal(Local local) {
         this.local = local;
     }
 
-    public String getEndereco() {
-        return endereco;
-    }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
 
     public String getData() {
         return data;
