@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by lglmoura on 3/13/17.
  */
-@Table
+
 public class Local extends SugarRecord  implements Parcelable {
 
     private Long id;
@@ -83,4 +83,10 @@ public class Local extends SugarRecord  implements Parcelable {
             return new Local[size];
         }
     };
+
+    @Override
+    public String toString()
+    {
+        return nome;
+    }
 }

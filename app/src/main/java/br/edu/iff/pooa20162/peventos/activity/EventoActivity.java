@@ -4,19 +4,23 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import br.edu.iff.pooa20162.peventos.R;
+import br.edu.iff.pooa20162.peventos.adapter.LocalAdapter;
 import br.edu.iff.pooa20162.peventos.model.Evento;
 import br.edu.iff.pooa20162.peventos.model.Local;
 
 public class EventoActivity extends Activity {
 
     EditText nome,  data, capacidade;
-    Spinner local;
+    Spinner spLocal;
     Button btsalvar,btalterar;
     int id;
 
@@ -27,15 +31,22 @@ public class EventoActivity extends Activity {
         id = (int) intent.getSerializableExtra("id");
 
         String nomep     = (String) intent.getSerializableExtra("nome");
-        Local localp     = (Local) intent.getSerializableExtra("local");
+        //Local localp     = (Local) intent.getSerializableExtra("local");
         String datap     = (String) intent.getSerializableExtra("data");
         int capacidadep  = (int)  intent.getSerializableExtra("capacidade");
 
         EditText nome = (EditText) findViewById(R.id.etNomeEvento);
         nome.setText(nomep);
 
-        Spinner local = (Spinner) findViewById(R.id.spLocalinEvento);
-        //local..setText(localp);
+
+        final ArrayList<Local> locais  = (ArrayList) Local.listAll(Local.class);
+
+        ArrayAdapter<Local> adapter = new ArrayAdapter<Local>(this, android.R.layout.simple_spinner_item, locais);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+        spLocal = (Spinner) findViewById(R.id.spLocalinEvento);
+        spLocal.setAdapter(adapter);
 
 
         EditText data = (EditText) findViewById(R.id.etDataEvento);
@@ -80,20 +91,21 @@ public class EventoActivity extends Activity {
 
     public void salvar() {
 
-        /*
+
         nome = (EditText) findViewById(R.id.etNomeEvento);
-        local = (Spinner) findViewById(R.id.spLocalinEvento);
+        Local local  = ((Local)spLocal.getSelectedItem());
+
 
         data = (EditText) findViewById(R.id.etDataEvento);
         capacidade = (EditText) findViewById(R.id.etCapacidadeEvento);
 
 
-        Evento evento = new Evento(nome.getText().toString(),local.getText().toString(),
+        Evento evento = new Evento(nome.getText().toString(),local,
                 data.getText().toString(),
                 Integer.parseInt(capacidade.getText().toString()));
 
         evento.save();
-        */
+
         Toast.makeText(this,"Evento Cadastrado",Toast.LENGTH_LONG).show();
         this.finish();
 

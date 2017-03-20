@@ -69,7 +69,7 @@ public class ListaLocalActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         final ArrayList<Local> locais  = (ArrayList) Local.listAll(Local.class);
-        Log.e("++++++++++++++",String.valueOf(locais.size()));
+
 
         ListView lista = (ListView) findViewById(R.id.lvLocais);
         ArrayAdapter adapter = new LocalAdapter(this,locais);
