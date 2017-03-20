@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -68,6 +69,7 @@ public class ListaLocalActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         final ArrayList<Local> locais  = (ArrayList) Local.listAll(Local.class);
+        Log.e("++++++++++++++",String.valueOf(locais.size()));
 
         ListView lista = (ListView) findViewById(R.id.lvLocais);
         ArrayAdapter adapter = new LocalAdapter(this,locais);
