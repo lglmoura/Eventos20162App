@@ -6,6 +6,8 @@ import com.orm.dsl.Table;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.List;
+
 /**
  * Created by lglmoura on 3/13/17.
  */
@@ -20,9 +22,14 @@ public class Local extends SugarRecord  implements Parcelable {
 
     }
 
+
     public Local(String nome, String endereco) {
         this.nome = nome;
         this.endereco = endereco;
+    }
+
+    List<Evento> getEventos() {
+        return Evento.find(Evento.class, "local = ?", new String(getId().toString()));
     }
 
     public String getNome() {
