@@ -85,9 +85,9 @@ public class LocalActivity extends Activity {
     }
     public void alterar() {
 
-        nome = (EditText) findViewById(R.id.etNomeEvento);
+        nome = (EditText) findViewById(R.id.etNomeLocal);
 
-        endereco = (EditText) findViewById(R.id.etEnderecoEvento);
+        endereco = (EditText) findViewById(R.id.etEnderecoLocal);
 
 
         Local local = Local.findById(Local.class, id);
