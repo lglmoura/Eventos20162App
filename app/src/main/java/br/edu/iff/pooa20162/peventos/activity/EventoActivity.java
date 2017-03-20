@@ -13,7 +13,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import br.edu.iff.pooa20162.peventos.R;
-import br.edu.iff.pooa20162.peventos.adapter.LocalAdapter;
 import br.edu.iff.pooa20162.peventos.model.Evento;
 import br.edu.iff.pooa20162.peventos.model.Local;
 
@@ -31,7 +30,7 @@ public class EventoActivity extends Activity {
         id = (int) intent.getSerializableExtra("id");
 
         String nomep     = (String) intent.getSerializableExtra("nome");
-        //Local localp     = (Local) intent.getSerializableExtra("local");
+
         String datap     = (String) intent.getSerializableExtra("data");
         int capacidadep  = (int)  intent.getSerializableExtra("capacidade");
 
@@ -111,9 +110,9 @@ public class EventoActivity extends Activity {
 
     }
     public void alterar() {
-        /*
+
         nome = (EditText) findViewById(R.id.etNomeEvento);
-        local = (EditText) findViewById(R.id.etLocalEvento);
+        Local local  = ((Local)spLocal.getSelectedItem());
 
         data = (EditText) findViewById(R.id.etDataEvento);
         capacidade = (EditText) findViewById(R.id.etCapacidadeEvento);
@@ -121,13 +120,13 @@ public class EventoActivity extends Activity {
         Evento evento = Evento.findById(Evento.class, id);
 
         evento.setNome(nome.getText().toString());
-        evento.setLocal(local.getText().toString());
-        evento.setEndereco(endereco.getText().toString());
+        evento.setLocal(local);
+        
         evento.setData(data.getText().toString());
         evento.setCapacidade(Integer.parseInt(capacidade.getText().toString()));
 
         evento.save();
-        */
+
         Toast.makeText(this,"Evento Alterado",Toast.LENGTH_LONG).show();
         this.finish();
     }
