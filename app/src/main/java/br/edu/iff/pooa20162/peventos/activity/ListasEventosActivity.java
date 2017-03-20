@@ -35,7 +35,7 @@ public class ListasEventosActivity extends AppCompatActivity {
                 intent.putExtra("id",0);
                 intent.putExtra("nome","");
                 intent.putExtra("local","");
-                intent.putExtra("endereco","");
+
                 intent.putExtra("data","");
                 intent.putExtra("capacidade",0);
 
@@ -81,8 +81,7 @@ public class ListasEventosActivity extends AppCompatActivity {
 
                 intent.putExtra("id",eventos.get(i).getId().intValue());
                 intent.putExtra("nome",eventos.get(i).getNome());
-                intent.putExtra("local",eventos.get(i).getLocal());
-                intent.putExtra("endereco",eventos.get(i).getEndereco());
+                intent.putExtra("local",eventos.get(i).getLocal().getId());
                 intent.putExtra("data",eventos.get(i).getData());
                 intent.putExtra("capacidade",eventos.get(i).getCapacidade());
 

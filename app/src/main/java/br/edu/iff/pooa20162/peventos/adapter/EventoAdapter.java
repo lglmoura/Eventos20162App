@@ -38,7 +38,7 @@ public class EventoAdapter extends ArrayAdapter<Evento> {
         TextView data = (TextView) rowView.findViewById(R.id.tvllvData);
 
         nome.setText(eventos.get(position).getNome());
-        local.setText(eventos.get(position).getLocal());
+        local.setText(eventos.get(position).getLocal().getNome());
         data.setText(eventos.get(position).getData());
         return rowView;
     }

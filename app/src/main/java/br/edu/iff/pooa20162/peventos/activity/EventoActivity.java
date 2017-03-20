@@ -6,14 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import br.edu.iff.pooa20162.peventos.R;
 import br.edu.iff.pooa20162.peventos.model.Evento;
+import br.edu.iff.pooa20162.peventos.model.Local;
 
 public class EventoActivity extends Activity {
 
-    EditText nome, local, endereco, data, capacidade;
+    EditText nome,  data, capacidade;
+    Spinner local;
     Button btsalvar,btalterar;
     int id;
 
@@ -24,22 +27,19 @@ public class EventoActivity extends Activity {
         id = (int) intent.getSerializableExtra("id");
 
         String nomep     = (String) intent.getSerializableExtra("nome");
-        String localp    = (String) intent.getSerializableExtra("local");
-        String enderecop = (String) intent.getSerializableExtra("endereco");
+        Local localp     = (Local) intent.getSerializableExtra("local");
         String datap     = (String) intent.getSerializableExtra("data");
         int capacidadep  = (int)  intent.getSerializableExtra("capacidade");
 
         EditText nome = (EditText) findViewById(R.id.etNomeEvento);
         nome.setText(nomep);
 
-        EditText local = (EditText) findViewById(R.id.etLocalEvento);
-        local.setText(localp);
+        Spinner local = (Spinner) findViewById(R.id.spLocalinEvento);
+        //local..setText(localp);
 
-        EditText endereco = (EditText) findViewById(R.id.etEnderecoEvento);
-        endereco.setText(enderecop);
 
         EditText data = (EditText) findViewById(R.id.etDataEvento);
-        local.setText(localp);
+        data.setText(datap);
 
         EditText capacidade = (EditText) findViewById(R.id.etCapacidadeEvento);
         capacidade.setText(Integer.toString(capacidadep));
@@ -80,27 +80,29 @@ public class EventoActivity extends Activity {
 
     public void salvar() {
 
+        /*
         nome = (EditText) findViewById(R.id.etNomeEvento);
-        local = (EditText) findViewById(R.id.etLocalEvento);
-        endereco = (EditText) findViewById(R.id.etEnderecoEvento);
+        local = (Spinner) findViewById(R.id.spLocalinEvento);
+
         data = (EditText) findViewById(R.id.etDataEvento);
         capacidade = (EditText) findViewById(R.id.etCapacidadeEvento);
 
+
         Evento evento = new Evento(nome.getText().toString(),local.getText().toString(),
-                endereco.getText().toString(),data.getText().toString(),
+                data.getText().toString(),
                 Integer.parseInt(capacidade.getText().toString()));
 
         evento.save();
-
+        */
         Toast.makeText(this,"Evento Cadastrado",Toast.LENGTH_LONG).show();
         this.finish();
 
     }
     public void alterar() {
-
+        /*
         nome = (EditText) findViewById(R.id.etNomeEvento);
         local = (EditText) findViewById(R.id.etLocalEvento);
-        endereco = (EditText) findViewById(R.id.etEnderecoEvento);
+
         data = (EditText) findViewById(R.id.etDataEvento);
         capacidade = (EditText) findViewById(R.id.etCapacidadeEvento);
 
@@ -113,7 +115,7 @@ public class EventoActivity extends Activity {
         evento.setCapacidade(Integer.parseInt(capacidade.getText().toString()));
 
         evento.save();
-
+        */
         Toast.makeText(this,"Evento Alterado",Toast.LENGTH_LONG).show();
         this.finish();
     }
